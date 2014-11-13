@@ -30,7 +30,12 @@ public class Palabra{
 		String auxiliar = this.contenido.replace(" ","");
                 return auxiliar.length();
         }
-	
+
+	//metodo 2 que elimina espacios al principio y al final           
+	public int eliminaBlancosPrincipioFinal(){
+		String auxiliar = this.contenido.trim();
+		return auxiliar.length();
+	}	
 	//metodo que reemplace letras
 	public String reemplazar(char vieja, char nueva){
 		return this.contenido.replace(vieja,nueva);
@@ -63,12 +68,13 @@ public class Palabra{
 
 class TestPalabra{
 	public static void main(String[] args){
-		Palabra p1 = new Palabra("Esto es una cadena");
+		Palabra p1 = new Palabra(" Esto es una cadena ");
 		System.out.println(p1);
 		System.out.println("En mayúscula: " + p1.mayuscula());
 		System.out.println("En minúscula: " + p1.minuscula());
 		System.out.println("Numero caracteres: " +p1.numeroCaracteres());
 		System.out.println("Numero letras: " +p1.numeroLetras());
+		System.out.println("Caracteres sin blanco: " +p1.eliminaBlancosPrincipioFinal());
 		System.out.println("Reemplazar e i: " +p1.reemplazar('e','i'));
 		System.out.println("Empieza por: " +p1.empiezaPor1());
 		System.out.println("Empieza por: " +p1.empiezaPor2());
